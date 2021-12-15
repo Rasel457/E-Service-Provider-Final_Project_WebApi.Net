@@ -1,0 +1,23 @@
+<div>
+    <h2>All Services Information</h2>
+
+      <table class="table table-bordered ">
+        <tr class="table-info">
+          <th>Name</th>
+          <th>Details</th>
+          <th>Price</th>
+          <th>Staus</th>
+          <th>Type</th>
+          <th>Action</th>
+          
+        </tr>
+        <tr ng-repeat="s in services">
+            <td>{{s.name}}</td>
+            <td>{{s.details}}</td>
+            <td>{{s.price}}</td>
+            <td>{{s.status}}</td>
+            <td>{{s.type}}</td>
+            <td> <a href="#!CustomerService/Cart/{{s.id}}" class="btn btn-info">Add To Cart</a></td>
+        </tr>
+      </table>
+  </div>

@@ -1,0 +1,27 @@
+<div>
+    <h2>All Services</h2>
+     <form  class="form-inline my-2 my-lg-0">
+      <h3>Service Search:</h3> <input class="form-control mr-sm-2" type="search" ng-model="type" placeholder="Service Search" aria-label="Search">
+    </form> 
+  <br>
+  
+      <table class="table table-bordered table-striped">
+        <tr class="table-primary">
+          <th>Name</th>
+          <th>Details</th>
+          <th>Price</th>
+          <th>Staus</th>
+          <th>Type</th>
+          <th>Action</th>
+          
+        </tr>
+        <tr ng-repeat="s in services| filter:type">
+            <td>{{s.name}}</td>
+            <td>{{s.details}}</td>
+            <td>{{s.price}}</td>
+            <td>{{s.status}}</td>
+            <td>{{s.type}}</td>
+            <td> <a href="#!CustomerHome/ServiceDetails/{{s.id}}" class="btn btn-dark">View Comment</a></td>
+        </tr>
+      </table>
+  </div>

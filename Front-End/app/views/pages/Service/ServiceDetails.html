@@ -1,0 +1,27 @@
+<div>
+    <h2>Detail Information of Service</h2>
+
+      <table class="table table-bordered">
+        <tr class="table-active">
+          <th>Service Name</th>
+          <th>Service Details</th>
+          <th>Service Price</th>
+          <th>Staus</th>
+          <th>Service Type</th>
+          
+        </tr>
+        <tr>
+            <td>{{s.name}}</td>
+            <td>{{s.details}}</td>
+            <td>{{s.price}}</td>
+            <td>{{s.status}}</td>
+            <td>{{s.type}}</td>
+        </tr>
+      </table>
+      <h3><b>Comment List</b></h3>
+      <ul ng-repeat="comment in s.Comments">
+        <h5><b>User Name: {{comment.User.name}}</b></h5>
+        <li>{{comment.comment1}}</li>
+      </ul>
+     
+  </div>

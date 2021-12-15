@@ -1,0 +1,20 @@
+<div>
+    <h2>Cart</h2>
+
+      <table class="table table-bordered ">
+        <tr class="table-info">
+          <th>Name</th>
+          <th>Details</th>
+          <th>Price</th>
+          <th>Staus</th>
+          <th>Type</th>
+        </tr>
+        <tr ng-repeat="c in carts">
+            <td>{{c.name}}</td>
+            <td>{{c.details}}</td>
+            <td>{{c.price}}</td>
+            <td>{{c.status}}</td>
+            <td>{{c.type}}</td>
+        </tr>
+      </table>
+  </div>

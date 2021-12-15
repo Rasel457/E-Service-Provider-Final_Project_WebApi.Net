@@ -1,0 +1,39 @@
+<h2 class="text-center">Edit Profile Information</h2>
+<br>
+<center>
+    <form  ng-submit="submit()">
+        <table class="table w-25">
+             <tr>
+                <td></td>
+                <td> <input type="hidden" ng-model="id" /></td>
+            </tr> 
+            <tr>
+                <td><label>Name</label></td>
+                <td> <input type="text" ng-model="name"  /></td>
+            </tr>
+            
+            <tr>
+                <td><label>Phone</label></td>
+                <td><input type="text"  ng-model="phone"/></td>
+            </tr>
+            <tr>
+                <td><label>Email</label></td>
+                <td><input type="email"  ng-model="email" /></td>
+            </tr>
+            <tr>
+                <td> <label>Password</label></td>
+                <td><input type="password"  ng-model="password" /></td>
+            </tr>
+            <tr>
+                <td><label>House</label></td>
+                <td><input type="text"  ng-model="house" /></td>
+            </tr>
+            <tr>
+                <td> <label>Road</label></td>
+                <td><input type="text"  ng-model="road" /></td>
+            </tr>
+        </table>
+        <!-- <a href="#!CustomerHome/UpdateProfile" class="btn btn-success">Update</a>  -->
+        <input type="Submit" value="Update" class="btn btn-success " />
+    </form>
+</center>

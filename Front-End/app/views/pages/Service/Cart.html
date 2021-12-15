@@ -1,0 +1,26 @@
+<br>
+<a href="#!CustomerService/AddToCart" class="btn btn-warning ml-2">Back</a>
+</br>
+<div>
+    <h2>Cart</h2>
+
+      <table class="table table-bordered ">
+        <tr class="table-info">
+          <th>Name</th>
+          <th>Details</th>
+          <th>Price</th>
+          <th>Staus</th>
+          <th>Type</th>
+          <th>Action</th>
+          
+        </tr>
+        <tr ng-repeat="c in carts">
+            <td>{{c.name}}</td>
+            <td>{{c.details}}</td>
+            <td>{{c.price}}</td>
+            <td>{{c.status}}</td>
+            <td>{{c.type}}</td>
+            <td> <a href="#!CustomerService/CartDelete/{{c.id}}" class="btn btn-info">Delete</a></td>
+        </tr>
+      </table>
+  </div>

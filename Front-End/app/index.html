@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" >
+  <head>
+    <!--<base href="/" />-->
+    <meta charset="utf-8">
+    <script src="app/lib/angular.min.js"></script>
+
+    <script src="app/lib/angular.route.min.js"></script>
+    <script src="app/app.js"></script>
+
+    <title>E-Service</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> -->
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  </head>
+  <body ng-app="myApp">
+    <div ng-include="'views/inc/top_nav.html'"></div>
+    <div ng-view> </div>
+    <div ng-include="'views/inc/footer.html'"></div>
+  </body>
+</html>
+
+<!-- Add Services here -->
+<script src="app/services/ajax.js"></script>
+
+
+<!-- Add Controllers here -->
+<!-- <script src="app/controllers/demo.js"></script>
+<script src="app/controllers/demo2.js"></script>
+<script src="app/controllers/products.js"></script>
+<script src="app/controllers/Posts.js"></script> -->
+
+<script src="app/controllers/Customer/home.js"></script>
+<script src="app/controllers/Customer/MyOrder.js"></script>
+<script src="app/controllers/Customer/MyOrderDetails.js"></script>
+<script src="app/controllers/Customer/MyProfile.js"></script>
+<script src="app/controllers/Customer/EditProfile.js"></script>
+
+<script src="app/controllers/Service/AllServices.js"></script>
+<script src="app/controllers/Service/serviceDetails.js"></script>
+<script src="app/controllers/Service/services.js"></script>
+<script src="app/controllers/Service/search.js"></script>
+<script src="app/controllers/Service/cart.js"></script>
+<script src="app/controllers/Service/deleteCart.js"></script>
