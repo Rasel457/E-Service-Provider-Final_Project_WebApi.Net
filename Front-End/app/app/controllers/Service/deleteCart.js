@@ -1,4 +1,4 @@
-app.controller("deleteCart",function($scope,$routeParams){
+app.controller("deleteCart",function($scope,$routeParams,$location){
     var id=$routeParams.id;
 
     var newCart=[];
@@ -18,7 +18,8 @@ app.controller("deleteCart",function($scope,$routeParams){
     }
 
     localStorage.setItem('cart', JSON.stringify(newCart));
-    $scope.carts=  JSON.parse(localStorage.getItem("cart"));
+   // $scope.carts=  JSON.parse(localStorage.getItem("cart"));
+    $location.path("/CustomerService/Cart");
   
 
 });

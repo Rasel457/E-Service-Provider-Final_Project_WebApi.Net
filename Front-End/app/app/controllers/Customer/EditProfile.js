@@ -10,7 +10,7 @@ app.controller("EditProfile",function($scope,$http,ajax,$routeParams,$location){
                 house: $scope.house,
                 road: $scope.road
             };
-            console.log(data);
+           // console.log(data);
             ajax.post("api/CustomerHome/UpdateProfile", data, success, error)
             function success(response){
             console.log(response);

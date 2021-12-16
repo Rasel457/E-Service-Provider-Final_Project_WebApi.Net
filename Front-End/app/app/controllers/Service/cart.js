@@ -1,4 +1,4 @@
-app.controller("cart",function($scope,ajax,$routeParams){
+app.controller("cart",function($scope,ajax,$routeParams,$location){
     ajax.get("api/CustomerService/GetById/"+$routeParams.id,success,error);
 
     function success(response){
@@ -15,7 +15,8 @@ app.controller("cart",function($scope,ajax,$routeParams){
         localStorage.setItem('cart', JSON.stringify(old.concat(services)));
        }
         // localStorage.clear("products");
-        $scope.carts=  JSON.parse(localStorage.getItem("cart"));
+        //$scope.carts=  JSON.parse(localStorage.getItem("cart"));
+        $location.path("/CustomerService/Cart");
 
 
        
