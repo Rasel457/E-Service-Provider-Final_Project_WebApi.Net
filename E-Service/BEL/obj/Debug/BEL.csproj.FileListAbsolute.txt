@@ -10,3 +10,9 @@ E:\11 TH SEMESTER FINAL\ASP.NET\Final_Project\E-Service\BEL\obj\Debug\BEL.csproj
 E:\11 TH SEMESTER FINAL\ASP.NET\Final_Project\E-Service\BEL\obj\Debug\BEL.csproj.CoreCompileInputs.cache
 E:\11 TH SEMESTER FINAL\ASP.NET\Final_Project\E-Service\BEL\obj\Debug\BEL.dll
 E:\11 TH SEMESTER FINAL\ASP.NET\Final_Project\E-Service\BEL\obj\Debug\BEL.pdb
+E:\11 TH SEMESTER FINAL\ASP.NET\Final_Project_WebApi.Net\E-Service\BEL\bin\Debug\BEL.dll
+E:\11 TH SEMESTER FINAL\ASP.NET\Final_Project_WebApi.Net\E-Service\BEL\bin\Debug\BEL.pdb
+E:\11 TH SEMESTER FINAL\ASP.NET\Final_Project_WebApi.Net\E-Service\BEL\obj\Debug\BEL.csproj.AssemblyReference.cache
+E:\11 TH SEMESTER FINAL\ASP.NET\Final_Project_WebApi.Net\E-Service\BEL\obj\Debug\BEL.csproj.CoreCompileInputs.cache
+E:\11 TH SEMESTER FINAL\ASP.NET\Final_Project_WebApi.Net\E-Service\BEL\obj\Debug\BEL.dll
+E:\11 TH SEMESTER FINAL\ASP.NET\Final_Project_WebApi.Net\E-Service\BEL\obj\Debug\BEL.pdb

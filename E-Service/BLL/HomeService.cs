@@ -91,7 +91,7 @@ namespace BLL
             DataAccessFactory.CommentDataAccess().AddComment(data);
         }
 
-        public static void Checkout(ServiceModel s, string add,int id)
+        public static void Checkout(List<ServiceModel> s, string add,int id)
         {
             var config = new MapperConfiguration(c =>
             {

@@ -51,10 +51,12 @@ namespace E_Service.Controllers
 
         [Route("api/CustomerService/Checkout")]
         [HttpPost]
-        public HttpResponseMessage Checkout(ServiceModel s, CorderModel o)
+        public HttpResponseMessage Checkout(CheckoutModel data)
         {
-            string add = o.delevery_address;
-            int id = 1;
+            string add = data.Address;
+            List<ServiceModel> s = data.Service;
+           //string add = o.delevery_address;
+            int id = 8;
             HomeService.Checkout(s, add, id);
             return Request.CreateResponse(HttpStatusCode.OK);
         }

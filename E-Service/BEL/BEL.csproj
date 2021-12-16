@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CheckoutModel.cs" />
     <Compile Include="CommentModel.cs" />
     <Compile Include="CorderModel.cs" />
     <Compile Include="CuserModel.cs" />
