@@ -1,29 +1,28 @@
 app.controller("ServiceCart",function($scope,$http,$location){
-    //$scope.value = "Wellcome";
-     //$location.path("/products");
      $scope.carts=  JSON.parse(localStorage.getItem("cart"));
-     var s=JSON.parse(localStorage["cart"]);
+     var s=JSON.parse(localStorage.getItem("cart"));
      $scope.submit=function(){
         var o = {
             delevery_address: $scope.delevery_address
+      
          };
-         console.log(o);
-         console.log(s);
-          $http.post("https://localhost:44348/api/CustomerService/Checkout",s, o).
+       
+        // console.log(o);
+         //console.log(s);
+         var data={
+            Service:s,
+            Address:$scope.delevery_address,
+            //Address2:$scope.delevery_address
+           
+         };
+         localStorage.clear("cart");
+         //console.log(data);
+          $http.post("https://localhost:44348/api/CustomerService/Checkout",data).
           then(function(response){
               console.log(response);
              $location.path("/CustomerHome/MyOrder");
             alert("Order Place Successfully");
          })
-    //      function success(response){
-    //      console.log(response);
-    //      $location.path("/CustomerHome/MyProfile");
-    //      //alert("New Project Added Successfully");
-    //  }
-    //  function error(error){
-    //      console.log(error);
-    //      alert("Failed To Added !!!!");
-    //  }
 
  }
 });
