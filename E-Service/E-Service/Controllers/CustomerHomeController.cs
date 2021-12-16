@@ -23,7 +23,7 @@ namespace E_Service.Controllers
         [HttpGet]
         public HttpResponseMessage MyProfile()
         {
-            int user_id = 2;
+            int user_id = 9;
             return Request.CreateResponse(HttpStatusCode.OK, CuserService.MyProfileInfo(user_id));
         }
 
@@ -46,7 +46,7 @@ namespace E_Service.Controllers
         [HttpGet]
         public HttpResponseMessage MyOrder()
         {
-            int user_id = 5;
+            int user_id = 9;
             return Request.CreateResponse(HttpStatusCode.OK, CuserService.MyOrder(user_id));
         }
         [Route("api/CustomerHome/Details/{id}")]

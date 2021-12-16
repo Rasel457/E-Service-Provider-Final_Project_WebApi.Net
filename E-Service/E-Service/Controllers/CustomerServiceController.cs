@@ -49,9 +49,28 @@ namespace E_Service.Controllers
             return Request.CreateResponse(HttpStatusCode.OK, HomeService.GetBySearch(catagory));
         }
 
+        [Route("api/CustomerService/Checkout")]
+        [HttpPost]
+        public HttpResponseMessage Checkout(ServiceModel s, CorderModel o)
+        {
+            string add = o.delevery_address;
+            int id = 1;
+            HomeService.Checkout(s, add, id);
+            return Request.CreateResponse(HttpStatusCode.OK);
+        }
+
+        //[Route("api/CustomerService/Checkout")]
+        //[HttpPost]
+        //public void Checkout(ServiceModel s, CorderModel o)
+        //{
+        //    string add = o.delevery_address;
+        //    int id = 9;
+        //    HomeService.Checkout(s, add, id);
+        //}
 
 
-        
+
+
 
 
 

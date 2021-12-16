@@ -31,6 +31,39 @@ namespace DAL
         {
             return db.Services.ToList();
         }
-       
+
+        public void PlaceOrder(List<Service> services, string add, int id)
+        {
+            var emp = (from e in db.Employees
+                       where e.work_status == "free"
+                       && e.work_area == add
+                       select e).First();
+            var emp_id = emp.id;
+
+            Order o = new Order();
+            //o.customer_id = (int)u_id;
+            o.customer_id = id;
+            o.order_place_date = DateTime.Now;
+            o.status = "Ordered";
+            o.delevery_address = add;
+            db.Orders.Add(o);
+            db.SaveChanges();
+
+            foreach (var s in services)
+            {
+                var od = new Order_Details()
+                {
+                    service_id = s.id,
+                    employee_id = emp_id,
+                    unit_price = s.price,
+                    quantity = 1,
+                    order_id = o.id
+                };
+                db.Order_Details.Add(od);
+                db.SaveChanges();
+            }
+
+
+        }
     }
 }

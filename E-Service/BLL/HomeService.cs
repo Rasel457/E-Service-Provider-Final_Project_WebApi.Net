@@ -91,6 +91,18 @@ namespace BLL
             DataAccessFactory.CommentDataAccess().AddComment(data);
         }
 
+        public static void Checkout(ServiceModel s, string add,int id)
+        {
+            var config = new MapperConfiguration(c =>
+            {
+                c.CreateMap<ServiceModel, Service>();
+            });
+            var mapper = new Mapper(config);
+            var services = mapper.Map<List<Service>>(s);
+            DataAccessFactory.ServiceDataAccess().PlaceOrder(services,add,id);
+
+        }
+
 
     }
 }

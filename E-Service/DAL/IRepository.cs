@@ -11,6 +11,7 @@ namespace DAL
         List<T> GetAll();
         T Get(ID id);
         List<T> BySearch(S c);
+        void PlaceOrder(List<T> services, S add, ID id);
         
     }
 }
