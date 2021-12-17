@@ -35,5 +35,51 @@ namespace DAL
             return orders;
         }*/
 
+        /* public void Delete(int id)
+         {
+             var entity = (from o in db.Orders
+                           where o.customer_id == id
+                           select o).ToList();
+             foreach(var o in entity)
+             {
+                 var details= (from od in db.Order_Details
+                               where od.order_id == o.id
+                               select od).ToList();
+                 foreach(var d in details)
+                 {
+                     db.Order_Details.Remove(d);
+                     db.SaveChanges();
+                 }
+                 db.Orders.Remove(o);
+                 db.SaveChanges();
+
+             }
+
+             var comments = (from c in db.Comments
+                            where c.user_id == id
+                            select c).ToList();
+             foreach (var cm in comments)
+             {
+                 db.Comments.Remove(cm);
+                 db.SaveChanges();
+             }
+
+             var em=db.Employees.FirstOrDefault(e => e.userid == id);
+             db.Employees.Remove(em);
+             db.SaveChanges();
+
+            var m = db.Managers.FirstOrDefault(e => e.userid == id);
+            db.Managers.Remove(m);
+            db.SaveChanges();
+
+            var cus = db.Customers.FirstOrDefault(e => e.userid == id);
+            db.Customers.Remove(cus);
+            db.SaveChanges();
+
+            var u=db.Users.FirstOrDefault(e => e.id == id);
+            db.Users.Remove(u);
+            db.SaveChanges();
+         }*/
+
     }
 }

@@ -23,7 +23,7 @@ namespace E_Service.Controllers
         [HttpGet]
         public HttpResponseMessage MyProfile()
         {
-            int user_id = 8;
+            int user_id = 1;
             return Request.CreateResponse(HttpStatusCode.OK, CuserService.MyProfileInfo(user_id));
         }
 
@@ -41,12 +41,19 @@ namespace E_Service.Controllers
             CuserService.Edit(user);
             return Request.CreateResponse(HttpStatusCode.OK);
         }
+        //[Route("api/CustomerHome/deleteProfile/{id}")]
+        //[HttpGet]
+        //public HttpResponseMessage Delete(int id)
+        //{
+        //    CuserService.Delete(id);
+        //    return Request.CreateResponse(HttpStatusCode.OK);
+        //}
 
         [Route("api/CustomerHome/MyOrder")]
         [HttpGet]
         public HttpResponseMessage MyOrder()
         {
-            int user_id = 8;
+            int user_id = 1;
             return Request.CreateResponse(HttpStatusCode.OK, CuserService.MyOrder(user_id));
         }
         [Route("api/CustomerHome/Details/{id}")]

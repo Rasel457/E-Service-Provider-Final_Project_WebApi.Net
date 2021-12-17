@@ -10,5 +10,6 @@ namespace DAL
     {
         X MyProfileInfo(ID u_id);
         void Edit(X e);
+       // void Delete(ID id);
     }
 }

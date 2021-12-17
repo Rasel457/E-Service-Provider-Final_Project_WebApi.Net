@@ -56,7 +56,7 @@ namespace E_Service.Controllers
             string add = data.Address;
             List<ServiceModel> s = data.Service;
            //string add = o.delevery_address;
-            int id = 8;
+            int id = 1;
             HomeService.Checkout(s, add, id);
             return Request.CreateResponse(HttpStatusCode.OK);
         }

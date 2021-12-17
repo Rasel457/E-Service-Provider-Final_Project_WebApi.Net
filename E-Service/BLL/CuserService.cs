@@ -34,6 +34,10 @@ namespace BLL
             DataAccessFactory.CuserDataAccess().Edit(data);
 
         }
+        //public static void Delete(int id)
+        //{
+        //    DataAccessFactory.CuserDataAccess().Delete(id);
+        //}
 
         public static List<CorderModel> MyOrder(int id)
         {
