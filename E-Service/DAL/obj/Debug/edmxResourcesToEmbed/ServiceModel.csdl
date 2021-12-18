@@ -19,9 +19,9 @@
       <PropertyRef Name="id" />
     </Key>
     <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="service_id" Type="Int32" />
-    <Property Name="comment1" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
-    <Property Name="user_id" Type="Int32" />
+    <Property Name="service_id" Type="Int32" Nullable="false" />
+    <Property Name="comment1" Type="String" MaxLength="300" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="user_id" Type="Int32" Nullable="false" />
     <NavigationProperty Name="Service" Relationship="Self.FK_Comments_Servicess" FromRole="Comments" ToRole="Services" />
     <NavigationProperty Name="User" Relationship="Self.FK_Comments_Users" FromRole="Comments" ToRole="Users" />
   </EntityType>
@@ -98,26 +98,38 @@
     <NavigationProperty Name="Employees" Relationship="Self.FK_Employees_Services" FromRole="Services" ToRole="Employees" />
     <NavigationProperty Name="Order_Details" Relationship="Self.FK_Order_Details_Services" FromRole="Services" ToRole="Order_Details" />
   </EntityType>
+  <EntityType Name="Token">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+    <Property Name="AccessToken" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CreatedAt" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ExpiredAt" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="User" Relationship="Self.FK_Tokens_Users" FromRole="Tokens" ToRole="Users" />
+  </EntityType>
   <EntityType Name="User">
     <Key>
       <PropertyRef Name="id" />
     </Key>
     <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="name" Type="String" MaxLength="30" FixedLength="true" Unicode="true" Nullable="false" />
-    <Property Name="phone" Type="String" MaxLength="15" FixedLength="true" Unicode="true" Nullable="false" />
-    <Property Name="email" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="usertype" Type="Int32" Nullable="false" />
-    <Property Name="password" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="created_at" Type="DateTime" Precision="3" />
     <Property Name="updated_at" Type="DateTime" Precision="3" />
-    <Property Name="house" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
-    <Property Name="road" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
-    <Property Name="additional_info" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+    <Property Name="house" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="road" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="additional_info" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="Comments" Relationship="Self.FK_Comments_Users" FromRole="Users" ToRole="Comments" />
     <NavigationProperty Name="Customers" Relationship="Self.FK_Customers_Users" FromRole="Users" ToRole="Customers" />
     <NavigationProperty Name="Employees" Relationship="Self.FK_Employees_Users" FromRole="Users" ToRole="Employees" />
     <NavigationProperty Name="Managers" Relationship="Self.FK_Managers_Users" FromRole="Users" ToRole="Managers" />
     <NavigationProperty Name="Orders" Relationship="Self.FK_Orders_Users" FromRole="Users" ToRole="Orders" />
+    <NavigationProperty Name="Tokens" Relationship="Self.FK_Tokens_Users" FromRole="Users" ToRole="Tokens" />
   </EntityType>
   <Association Name="FK_Applications_Employees">
     <End Role="Employees" Type="Self.Employee" Multiplicity="1" />
@@ -132,7 +144,7 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Comments_Servicess">
-    <End Role="Services" Type="Self.Service" Multiplicity="0..1" />
+    <End Role="Services" Type="Self.Service" Multiplicity="1" />
     <End Role="Comments" Type="Self.Comment" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Services">
@@ -144,7 +156,7 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Comments_Users">
-    <End Role="Users" Type="Self.User" Multiplicity="0..1" />
+    <End Role="Users" Type="Self.User" Multiplicity="1" />
     <End Role="Comments" Type="Self.Comment" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Users">
@@ -251,6 +263,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_Tokens_Users">
+    <End Role="Users" Type="Self.User" Multiplicity="1" />
+    <End Role="Tokens" Type="Self.Token" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Tokens">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Applications" EntityType="Self.Application" />
     <EntitySet Name="Comments" EntityType="Self.Comment" />
@@ -260,6 +284,7 @@
     <EntitySet Name="Order_Details" EntityType="Self.Order_Details" />
     <EntitySet Name="Orders" EntityType="Self.Order" />
     <EntitySet Name="Services" EntityType="Self.Service" />
+    <EntitySet Name="Tokens" EntityType="Self.Token" />
     <EntitySet Name="Users" EntityType="Self.User" />
     <AssociationSet Name="FK_Applications_Employees" Association="Self.FK_Applications_Employees">
       <End Role="Employees" EntitySet="Employees" />
@@ -304,6 +329,10 @@
     <AssociationSet Name="FK_Orders_Users" Association="Self.FK_Orders_Users">
       <End Role="Users" EntitySet="Users" />
       <End Role="Orders" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tokens_Users" Association="Self.FK_Tokens_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Tokens" EntitySet="Tokens" />
     </AssociationSet>
   </EntityContainer>
 </Schema>

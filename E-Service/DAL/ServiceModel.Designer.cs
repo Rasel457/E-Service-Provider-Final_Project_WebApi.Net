@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'E:\11 TH SEMESTER FINAL\ASP.NET\Final_Project\E-Sercice\DAL\ServiceModel.edmx'. 
+﻿// T4 code generation is enabled for model 'E:\11 TH SEMESTER FINAL\ASP.NET\Final_Project_WebApi.Net\E-Service\DAL\ServiceModel.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

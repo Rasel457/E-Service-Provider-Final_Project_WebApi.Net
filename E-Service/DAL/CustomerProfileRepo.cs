@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DAL
 {
-    class CustomerProfileRepo: IProfile<User, int>
+    class CustomerProfileRepo: IProfile<User, int>,IAuth
     {
         Entities db;
         public CustomerProfileRepo(Entities db)
@@ -80,6 +80,33 @@ namespace DAL
             db.Users.Remove(u);
             db.SaveChanges();
          }*/
+        public Token Authenticate(User user)
+        {
+            var u = db.Users.FirstOrDefault(en => en.email.Equals(user.email) && en.password.Equals(user.password));
+            Token t = null;
+            if (u != null)
+            {
+                string token = Guid.NewGuid().ToString();
+                t = new Token();
+                t.UserId = u.id;
+                t.AccessToken = token;
+                t.CreatedAt = DateTime.Now;
+                db.Tokens.Add(t);
+                db.SaveChanges();
+
+            }
+            return t;
+        }
+        public bool IsAuthenticated(string token)
+        {
+            var rs = db.Tokens.Any(en => en.AccessToken.Equals(token) && en.ExpiredAt == null);
+            return rs;
+        }
+
+        public bool Logout(string Token)
+        {
+            throw new NotImplementedException();
+        }
 
     }
 }

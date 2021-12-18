@@ -44,6 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AuthService.cs" />
     <Compile Include="CuserService.cs" />
     <Compile Include="HomeService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

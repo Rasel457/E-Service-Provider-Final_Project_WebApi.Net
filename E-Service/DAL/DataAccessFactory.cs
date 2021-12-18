@@ -30,6 +30,10 @@ namespace DAL
         {
             return new CustomerCommentRepo(db);
         }
+        public static IAuth AuthDataAccess()
+        {
+            return new CustomerProfileRepo(db);
+        }
 
     }
 }

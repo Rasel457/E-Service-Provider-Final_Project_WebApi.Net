@@ -33,6 +33,7 @@ namespace DAL
         public DbSet<Order_Details> Order_Details { get; set; }
         public DbSet<Order> Orders { get; set; }
         public DbSet<Service> Services { get; set; }
+        public DbSet<Token> Tokens { get; set; }
         public DbSet<User> Users { get; set; }
     }
 }

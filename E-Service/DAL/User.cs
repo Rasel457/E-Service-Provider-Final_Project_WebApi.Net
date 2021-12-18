@@ -21,6 +21,7 @@ namespace DAL
             this.Employees = new HashSet<Employee>();
             this.Managers = new HashSet<Manager>();
             this.Orders = new HashSet<Order>();
+            this.Tokens = new HashSet<Token>();
         }
     
         public int id { get; set; }
@@ -40,5 +41,6 @@ namespace DAL
         public virtual ICollection<Employee> Employees { get; set; }
         public virtual ICollection<Manager> Managers { get; set; }
         public virtual ICollection<Order> Orders { get; set; }
+        public virtual ICollection<Token> Tokens { get; set; }
     }
 }

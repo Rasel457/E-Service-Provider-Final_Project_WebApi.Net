@@ -1,5 +1,6 @@
 ﻿using BEL;
 using BLL;
+using E_Service.Auth;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,6 +14,7 @@ namespace E_Service.Controllers
     [EnableCors("*","*","*")]
     public class CustomerHomeController : ApiController
     {
+        [CustomAuth]
         [Route("api/CustomerHome/AllServices")]
         [HttpGet]
         public HttpResponseMessage GetAll()

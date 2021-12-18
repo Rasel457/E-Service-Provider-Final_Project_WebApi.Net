@@ -51,24 +51,23 @@
     <Compile Include="Application.cs">
       <DependentUpon>ServiceModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="CustomerCommentRepo.cs" />
-    <Compile Include="CustomerOrderRepo.cs" />
-    <Compile Include="CustomerProfileRepo.cs" />
-    <Compile Include="DataAccessFactory.cs" />
-    <Compile Include="IComment.cs" />
-    <Compile Include="IOrder.cs" />
-    <Compile Include="IProfile.cs" />
-    <Compile Include="ServiceRepo.cs" />
     <Compile Include="Comment.cs">
       <DependentUpon>ServiceModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Customer.cs">
       <DependentUpon>ServiceModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="CustomerCommentRepo.cs" />
+    <Compile Include="CustomerOrderRepo.cs" />
+    <Compile Include="CustomerProfileRepo.cs" />
+    <Compile Include="DataAccessFactory.cs" />
     <Compile Include="Employee.cs">
       <DependentUpon>ServiceModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="IRepository.cs" />
+    <Compile Include="IAuth.cs" />
+    <Compile Include="IComment.cs" />
+    <Compile Include="IOrder.cs" />
+    <Compile Include="IProfile.cs" />
     <Compile Include="Manager.cs">
       <DependentUpon>ServiceModel.tt</DependentUpon>
     </Compile>
@@ -78,7 +77,6 @@
     <Compile Include="Order_Details.cs">
       <DependentUpon>ServiceModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service.cs">
       <DependentUpon>ServiceModel.tt</DependentUpon>
     </Compile>
@@ -97,37 +95,41 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ServiceModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="ServiceRepo.cs" />
+    <Compile Include="IRepository.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Token.cs">
+      <DependentUpon>ServiceModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="User.cs">
       <DependentUpon>ServiceModel.tt</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.Config" />
+    <None Include="packages.config" />
     <EntityDeploy Include="ServiceModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>ServiceModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.Config" />
-    <None Include="packages.config" />
     <None Include="ServiceModel.edmx.diagram">
       <DependentUpon>ServiceModel.edmx</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="ServiceModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>ServiceModel.Context.cs</LastGenOutput>
       <DependentUpon>ServiceModel.edmx</DependentUpon>
+      <LastGenOutput>ServiceModel.Context.cs</LastGenOutput>
     </Content>
     <Content Include="ServiceModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>ServiceModel.edmx</DependentUpon>
       <LastGenOutput>ServiceModel.cs</LastGenOutput>
     </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
