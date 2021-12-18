@@ -9,7 +9,7 @@ namespace DAL
     public interface IAuth
     {
         Token Authenticate(User user);
-        bool IsAuthenticated(string Token);
-        bool Logout(string Token);
+        bool IsAuthenticated(string token);
+        bool Logout(string token);
     }
 }

@@ -12,9 +12,10 @@ using System.Web.Http.Cors;
 namespace E_Service.Controllers
 {
     [EnableCors("*","*","*")]
+    [CustomAuth]
     public class CustomerHomeController : ApiController
     {
-        [CustomAuth]
+       
         [Route("api/CustomerHome/AllServices")]
         [HttpGet]
         public HttpResponseMessage GetAll()

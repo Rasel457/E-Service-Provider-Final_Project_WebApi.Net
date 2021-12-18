@@ -34,5 +34,9 @@ namespace BLL
             var rs = DataAccessFactory.AuthDataAccess().IsAuthenticated(token);
             return rs;
         }
+        public static bool Logout(string token)
+        {
+            return DataAccessFactory.AuthDataAccess().Logout(token);
+        }
     }
 }

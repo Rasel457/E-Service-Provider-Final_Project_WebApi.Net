@@ -1,5 +1,6 @@
 ﻿using BEL;
 using BLL;
+using E_Service.Auth;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,6 +12,7 @@ using System.Web.Http.Cors;
 namespace E_Service.Controllers
 {
     [EnableCors("*", "*", "*")]
+    [CustomAuth]
     public class CustomerServiceController : ApiController
     {
         [Route("api/CustomerService/All")]

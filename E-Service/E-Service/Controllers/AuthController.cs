@@ -27,5 +27,22 @@ namespace E_Service.Controllers
             }
             return Request.CreateResponse(HttpStatusCode.NotFound, "User Not Found");
         }
+
+        [Route("api/logout")]
+        [HttpGet]
+        public HttpResponseMessage Logout()
+        {
+            var token = Request.Headers.Authorization.ToString();
+            if (token != null)
+            {
+                var rs = AuthService.Logout(token);
+                if (rs)
+                {
+                    return Request.CreateResponse(HttpStatusCode.OK, "Sucessfully logged out");
+                }
+
+            }
+            return Request.CreateResponse(HttpStatusCode.BadRequest, "Invalid token to logout");
+        }
     }
 }

@@ -103,9 +103,16 @@ namespace DAL
             return rs;
         }
 
-        public bool Logout(string Token)
+        public bool Logout(string token)
         {
-            throw new NotImplementedException();
+            var t = db.Tokens.FirstOrDefault(e => e.AccessToken.Equals(token));
+            if (t != null)
+            {
+                t.ExpiredAt = DateTime.Now;
+                db.SaveChanges();
+                return true;
+            }
+            return false;
         }
 
     }
