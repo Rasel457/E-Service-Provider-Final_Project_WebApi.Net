@@ -3,7 +3,8 @@ app.config(["$routeProvider","$locationProvider",function($routeProvider,$locati
 
     $routeProvider
     .when("/", {
-        templateUrl : "views/pages/demopage.html"
+        templateUrl : "views/pages/Customer/CustomerLogin.html",
+        controller: 'CustomerLogin'
     })
     .when("/CustomerHome", {
         templateUrl : "views/pages/Customer/CustomerHome.html",
@@ -53,6 +54,10 @@ app.config(["$routeProvider","$locationProvider",function($routeProvider,$locati
         templateUrl : "views/pages/Service/Search.html",
         controller: 'search'
     })
+    .when("/logout", {
+        templateUrl : "views/pages/Customer/CustomerLogin.html",
+        controller: 'logout'
+    })
     .otherwise({
         redirectTo:"/"
     });
@@ -63,3 +68,7 @@ app.config(["$routeProvider","$locationProvider",function($routeProvider,$locati
   //}
 
 }]);
+
+app.config(function($httpProvider){
+    $httpProvider.interceptors.push("interCeptor");
+});

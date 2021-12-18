@@ -9,6 +9,7 @@ app.controller("AllServices",function($scope,$http,ajax){
     ajax.get("api/CustomerHome/AllServices",success,error);
     function success(response){
         $scope.services=response.data;
+       // console.log(response,);
     }
     function error(error){
        console.log(error);

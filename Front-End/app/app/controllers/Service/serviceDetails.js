@@ -11,7 +11,7 @@ app.controller("serviceDetails",function($scope,ajax,$routeParams,$location){
     $scope.submit=function(){
         var data = {
                     service_id:$routeParams.id,
-                    comment1=$scope.comment1,
+                    comment1:$scope.comment1,
                     user_id:9
               
                  };

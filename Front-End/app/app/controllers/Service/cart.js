@@ -16,6 +16,7 @@ app.controller("cart",function($scope,ajax,$routeParams,$location){
        }
         // localStorage.clear("products");
         //$scope.carts=  JSON.parse(localStorage.getItem("cart"));
+        //alert("Added to Cart");
         $location.path("/CustomerService/Cart");
 
 
@@ -25,6 +26,7 @@ app.controller("cart",function($scope,ajax,$routeParams,$location){
     }
     function error(error){
        console.log(error);
+       alert("Failed !!!!!");
     }
 
 });

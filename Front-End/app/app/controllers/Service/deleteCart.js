@@ -19,6 +19,7 @@ app.controller("deleteCart",function($scope,$routeParams,$location){
 
     localStorage.setItem('cart', JSON.stringify(newCart));
    // $scope.carts=  JSON.parse(localStorage.getItem("cart"));
+
     $location.path("/CustomerService/Cart");
   
 
