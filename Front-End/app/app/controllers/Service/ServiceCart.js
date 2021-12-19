@@ -15,7 +15,7 @@ app.controller("ServiceCart",function($scope,$http,$location){
             //Address2:$scope.delevery_address
            
          };
-         localStorage.clear("cart");
+         localStorage.removeItem("cart");
          //console.log(data);
           $http.post("https://localhost:44348/api/CustomerService/Checkout",data).
           then(function(response){

@@ -12,7 +12,7 @@ app.controller("serviceDetails",function($scope,ajax,$routeParams,$location){
         var data = {
                     service_id:$routeParams.id,
                     comment1:$scope.comment1,
-                    user_id:9
+                    user_id:1
               
                  };
         //console.log(data);

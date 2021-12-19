@@ -42,6 +42,10 @@ app.config(["$routeProvider","$locationProvider",function($routeProvider,$locati
         templateUrl : "views/pages/Service/ServiceCart.html",
         controller: 'ServiceCart'
     })
+    .when("/CustomerService/ClearCart", {
+        templateUrl : "views/pages/Service/ServiceCart.html",
+        controller: 'ClearCart'
+    })
     .when("/CustomerService/AddCart/:id", {
         templateUrl : "views/pages/Service/Cart.html",
         controller: 'cart'
