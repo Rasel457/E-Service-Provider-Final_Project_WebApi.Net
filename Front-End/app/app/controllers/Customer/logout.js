@@ -5,7 +5,7 @@ app.controller("logout",function($scope,ajax,$location){
         console.log(response);
         localStorage.removeItem("token");
         localStorage.removeItem("UserId");
-        $location.path("/login")
+        $location.path("/")
     }
     function error(error){
        console.log(error);
