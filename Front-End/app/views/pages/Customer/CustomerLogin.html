@@ -24,14 +24,20 @@
 
 <body>
     <div class="login-form">
-        <form ng-submit="login()">
+        <form ng-submit="login()" name="myForm">
             <h2 class="text-center">Log in</h2>
             <div class="form-group">
                 <input name="email" type="email" class="form-control me-2" placeholder="Email" ng-model="data.email" required="required">
+                <span style="color:red" ng-show="myForm.email.$dirty && myForm.email.$invalid">
+                    <span ng-show="myForm.email.$error.required">Email is required.</span>
+                    <span ng-show="myForm.email.$error.email">Invalid email address.</span>
             </div>
             <br />
             <div class="form-group">
                 <input name="password" type="password" class="form-control" placeholder="Password" ng-model="data.password" required="required">
+                <span style="color:red" ng-show="myForm.password.$dirty">
+                <span ng-show="myForm.password.$error.required">Password is required.</span>
+                    
             </div>
             <br />
             <div class="form-group">

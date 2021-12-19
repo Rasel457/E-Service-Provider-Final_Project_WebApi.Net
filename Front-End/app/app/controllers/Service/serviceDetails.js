@@ -12,7 +12,7 @@ app.controller("serviceDetails",function($scope,ajax,$routeParams,$location){
         var data = {
                     service_id:$routeParams.id,
                     comment1:$scope.comment1,
-                    user_id:1
+                    user_id:JSON.parse(localStorage.getItem("UserId"))
               
                  };
         //console.log(data);

@@ -1,5 +1,5 @@
 app.controller("MyProfile",function($scope,$http,ajax){
-    ajax.get("api/CustomerHome/Profile",success,error);
+    ajax.get("api/CustomerHome/Profile/?user_id="+localStorage.UserId,success,error);
     function success(response){
         $scope.p=response.data;
     }
