@@ -24,9 +24,9 @@ namespace E_Service.Controllers
         }
         [Route("api/CustomerHome/Profile")]
         [HttpGet]
-        public HttpResponseMessage MyProfile()
+        public HttpResponseMessage MyProfile(int user_id)
         {
-            int user_id = 1;
+            //int user_id = 1;
             return Request.CreateResponse(HttpStatusCode.OK, CuserService.MyProfileInfo(user_id));
         }
 
@@ -54,9 +54,9 @@ namespace E_Service.Controllers
 
         [Route("api/CustomerHome/MyOrder")]
         [HttpGet]
-        public HttpResponseMessage MyOrder()
+        public HttpResponseMessage MyOrder(int user_id )
         {
-            int user_id = 1;
+            //int user_id = 1;
             return Request.CreateResponse(HttpStatusCode.OK, CuserService.MyOrder(user_id));
         }
         [Route("api/CustomerHome/Details/{id}")]

@@ -15,7 +15,8 @@ namespace BEL
         }
         public virtual List<ServiceModel> Service { get; set; }
         public string Address { get; set; }
-       // public string Address2 { get; set; }
+        public int UserId { get; set; }
+        // public string Address2 { get; set; }
 
     }
 }
