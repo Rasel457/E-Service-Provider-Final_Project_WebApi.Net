@@ -25,7 +25,7 @@ namespace E_Service.Controllers
 
                 return Request.CreateResponse(HttpStatusCode.OK, token);
             }
-            return Request.CreateResponse(HttpStatusCode.NotFound, "User Not Found");
+            return Request.CreateResponse(HttpStatusCode.NotFound, "Invalid Email Or Password");
         }
 
         [Route("api/logout")]
