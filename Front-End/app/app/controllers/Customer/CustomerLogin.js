@@ -8,7 +8,7 @@ app.controller("CustomerLogin",function($scope,$http,ajax,$location){
             $location.path("/CustomerHome");
         }
         function error(error){
-            console.log(error.data.statusText);
+            console.log(error);
         }
         
         
