@@ -1,7 +1,8 @@
 <div ng-include="'views/inc/top_nav.html'"></div>
+<br>
 <div>
-    <h2>Detail Information of Service</h2>
-
+    <h2 class="text-dark text-center"><i class="fas fa-info-circle"></i>Detail Information of Service</h2>
+    <br>
       <table class="table table-bordered">
         <tr class="table-active">
           <th>Service Name</th>
@@ -19,9 +20,9 @@
             <td>{{s.type}}</td>
         </tr>
       </table>
-      <h3><b>Comment List</b></h3>
+      <h3 class="text-primary"><b><i class="fas fa-list-ul"></i> Comment List</b></h3>
       <ul ng-repeat="comment in s.Comments">
-        <h5><b>User Name: {{comment.User.name}}</b></h5>
+        <h5>User Name:<b class="text-success" > {{comment.User.name}}</b></h5>
         <li>{{comment.comment1}}</li>
       </ul>
 

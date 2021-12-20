@@ -1,13 +1,14 @@
 <div ng-include="'views/inc/top_nav.html'"></div>
 <div>
-    <h3><b>Status :{{o.status}}</b></h3>
-    <h3><b>Delivary Address:{{o.delevery_address}}</b></h3>
-    <h3><b>Grand Total Charge:</b>{{total}}</h3>
+    <h2 class="text-dark text-center"><i class="fas fa-clipboard-list"></i> Order Details Information</h2>
+    <h3 class="text-primary ml-3">Status :<b> {{o.status}}</b></h3>
+    <h3 class="text-success ml-3">Delivary Address:<b> {{o.delevery_address}}</b></h3>
+    <h3 class="text-info ml-3">Grand Total Charge:<b> {{total}}</b></h3>
     <br />
-    <h2>Details Information</h2>
+    
 
       <table class="table table-bordered">
-        <tr class="table-active">
+        <tr class="table-primary">
           <th>Service Name</th>
           <th>Employee Name</th>
           <th>Unit Price</th>
